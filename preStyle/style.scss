@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-family: "Baloo 2", cursive;
+}
+
+a {
+  text-decoration: none;
+  color: #b48960;
+}
+
+.btn {
+  padding: 0.5rem 0.75rem;
+  border: none;
+  margin: 1rem 0.5em;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+body {
+  background-color: #e8e0d4;
+  color: #b48960;
+  .animation-wrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: #be2221;
+    .animation {
+      margin-top: 10vh;
+      height: 80vh;
+      // border: 5px solid red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .spaces {
+        // border: 5px solid green;
+        width: 100%;
+        height: 0;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 7%;
+        }
+      }
+    }
+    .slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: linear-gradient(to right, #e8e0d4, #b48960);
+      z-index: -1;
+    }
+  }
+
+  .header {
+    nav {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+      align-items: flex-end;
+      box-shadow: 0 8px 6px -6px #b48960;
+      .logo {
+        width: 200px;
+        height: 80px;
+        padding: 0.25rem 0;
+        margin-right: 1.2rem;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      ul {
+        display: flex;
+        li {
+          padding: 1rem;
+          padding-bottom: 0;
+          a {
+            font-size: 1.15rem;
+            transition: all 0.3s ease;
+            &:hover {
+              color: #be2221;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .main_part {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h1 {
+      font-size: 3rem;
+    }
+    .sort_desc,
+    .sort_asc {
+      background-color: #b48960;
+      color: white;
+      border-radius: 0.5rem;
+      font-size: 1.1rem;
+    }
+    p {
+      font-size: 1.15rem;
+    }
+    .all_inputs {
+      form {
+        input,
+        select {
+          font-size: 1.05rem;
+          padding: 0.5rem;
+          border: 0.25px solid #b48960;
+          margin: 0.35rem;
+          border-radius: 0.25rem;
+          background-color: white;
+        }
+        input::placeholder {
+          color: #b48960;
+        }
+        .class_credit {
+          width: 85px;
+        }
+        button {
+          border: none;
+          cursor: pointer;
+          background-color: #e8e0d4;
+          i {
+            font-size: 1.25rem;
+            pointer-events: none;
+            color: #b48960;
+          }
+        }
+      }
+    }
+    .plus_btn {
+      background-color: #e8e0d4;
+      border: none;
+      width: 2.5rem;
+      margin: 3rem 0;
+      cursor: pointer;
+      i {
+        font-size: 2.5rem;
+        color: #b48960;
+      }
+    }
+    .result {
+      width: 200px;
+      height: 200px;
+      border: 3px solid red;
+      border-radius: 50%;
+      text-align: center;
+      animation-name: border_color;
+      animation-duration: 5s;
+      animation-iteration-count: infinite;
+      p {
+        margin-top: 15px;
+      }
+      #result_gpa {
+        font-size: 3.5rem;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.remove {
+  transform: scale(0);
+  transition: all 0.5s ease;
+}
+
+@keyframes border_color {
+  0% {
+    border-color: brown;
+  }
+  25% {
+    border-color: red;
+  }
+  50% {
+    border-color: orange;
+  }
+  75% {
+    border-color: green;
+  }
+  100% {
+    border-color: brown;
+  }
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleDown {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
